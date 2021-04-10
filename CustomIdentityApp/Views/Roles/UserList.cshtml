@@ -1,0 +1,20 @@
+﻿@model IEnumerable<CustomIdentityApp.Models.User>
+
+@{
+    ViewData["Title"] = "UserList";
+}
+
+<h2>Users list</h2>
+
+<table class="table">
+    @foreach (var user in Model) {
+        <tr>
+            <td>
+                @user.Email
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { userId = user.Id })
+            </td>
+        </tr>
+    }
+</table>
